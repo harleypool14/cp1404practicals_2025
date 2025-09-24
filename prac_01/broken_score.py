@@ -13,3 +13,5 @@ elif score >= 50:
 else:
     if score < 50:
         print("Bad")
+
+

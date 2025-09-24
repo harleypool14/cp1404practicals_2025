@@ -25,3 +25,4 @@ number_of_stars = int(input("Number of stars: "))
 for i in range(1, number_of_stars + 1):
     print('*' * i)
 print()
+

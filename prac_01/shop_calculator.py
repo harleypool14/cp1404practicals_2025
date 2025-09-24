@@ -9,3 +9,4 @@ for i in range(number_of_items):
 if total > 100:
     total *= 0.9
 print(f"Total price for {number_of_items} items is ${total:.2f}")
+

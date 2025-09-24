@@ -15,3 +15,4 @@ while sales >= 0:
         bonus_amount = sales * HIGH_BONUS
         print(f"{bonus_amount:.0f}")
     sales = float(input("Enter Sales: $"))
+
