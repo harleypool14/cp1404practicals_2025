@@ -58,3 +58,4 @@ def show_stars(score):
 
 
 main()
+
