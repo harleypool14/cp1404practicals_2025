@@ -15,10 +15,12 @@ MIN_PRICE = 1
 MAX_PRICE = 100
 INITIAL_PRICE = 10.0
 STARTING_DAY = 0
+FILENAME = "info.txt"
 
 number_of_days = STARTING_DAY
 price = INITIAL_PRICE
-print(f"Starting price: ${price:,.2f}")
+out_file = open(FILENAME, 'w')
+print(f"Starting price: ${price:,.2f}", file=out_file)
 
 while MIN_PRICE <= price <= MAX_PRICE:
     price_change = 0
@@ -35,4 +37,5 @@ while MIN_PRICE <= price <= MAX_PRICE:
 
     number_of_days += 1
     price *= (1 + price_change)
-    print(f"On day {number_of_days} Price is ${price:,.2f}")
+    print(f"On day {number_of_days} Price is ${price:,.2f}", file=out_file)
+out_file.close()
