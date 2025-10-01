@@ -15,10 +15,10 @@ there is a valid input that is not zero.
 try:
     numerator = int(input("Enter the numerator: "))
     denominator = int(input("Enter the denominator: "))
-    fraction = numerator / denominator
-    print(fraction)
+    while denominator == 0:
+        denominator = int(input("Enter the denominator: "))
+    else:
+        fraction = numerator / denominator
+        print(fraction)
 except ValueError:
     print("Numerator and denominator must be valid numbers!")
-except ZeroDivisionError:
-    print("Cannot divide by zero!")
-print("Finished.")
