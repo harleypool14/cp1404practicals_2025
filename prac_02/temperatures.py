@@ -3,11 +3,6 @@ CP1404/CP5632 - Practical
 Program for temperature conversion
 """
 
-"""
-CP1404/CP5632 - Practical
-Program for temperature conversion
-"""
-
 MENU = """C - Convert Celsius to Fahrenheit
 F - Convert Fahrenheit to Celsius
 Q - Quit"""
@@ -41,4 +36,3 @@ def convert_fahrenheit_celsius(fahrenheit):
 
 
 main()
-

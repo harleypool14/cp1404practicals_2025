@@ -18,7 +18,7 @@ Program to determine score status
 def main():
     MENU = "(G)et a valid score\n(P)rint result\n(S)how stars\n(Q)uit"
     choice = ''
-    score = ''
+    score = 0  # Changed score from a list to 0
     while choice != 'Q':
         print(MENU)
         choice = input("Choice: ")
@@ -29,7 +29,7 @@ def main():
         elif choice == 'S':
             show_stars(score)
         elif choice == 'Q':
-            print("farewell")
+            print("farewell")  # Change this so that its outside of the loop
         else:
             print("Invalid")
 
@@ -58,4 +58,3 @@ def show_stars(score):
 
 
 main()
-

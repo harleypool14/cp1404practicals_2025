@@ -14,13 +14,14 @@ Program to determine score status
 # else:
 #     print("Bad")
 
-
 def main():
+    """Gets score"""
     score = float(input("Enter score: "))
     print(determine_result(score))
 
 
 def determine_result(score):
+    """Determines your result from the score"""
     if score < 0 or score > 100:
         print("Invalid score")
     elif score >= 90:
@@ -32,4 +33,3 @@ def determine_result(score):
 
 
 main()
-

@@ -12,3 +12,4 @@ while not is_finished:
     except ValueError:
         print("Please enter a valid integer.")
 print(f"Valid integer is: {result}")
+

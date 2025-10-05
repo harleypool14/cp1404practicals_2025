@@ -11,10 +11,10 @@ MIN_LENGTH = 6
 
 def main():
     password = get_password()
-    asterisks(password)
+    determine_length(password)
 
 
-def asterisks(password):
+def determine_length(password):
     print('*' * len(password))
 
 
