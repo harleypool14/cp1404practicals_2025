@@ -11,7 +11,7 @@ Yes you can add a while loop so that if the denominator is 0 it keeps asking unt
 there is a valid input that is not zero.
 """
 
-
+"""Prompts for two integers and print their fraction and retrying if denominator is zero."""
 try:
     numerator = int(input("Enter the numerator: "))
     denominator = int(input("Enter the denominator: "))
