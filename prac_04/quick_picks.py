@@ -11,3 +11,11 @@ def main():
         print("Invalid")
         quick_pick_count = int(input("How many quick picks? "))
 
+    for i in range(quick_pick_count):
+        quick_pick = []
+        for n in range(NUMBER_PER_LINE):
+            number = random.randint(MINIMUM_NUMBER, MAXIMUM_NUMBER)
+
+
+
+main()
