@@ -8,18 +8,31 @@ FILENAME = "wimbledon.csv"
 COUNTRY = 1
 CHAMPION = 2
 
+
 def main():
     records = get_records(FILENAME)
-    champion_to_count, countries = process_records(records)
-    display_results(champion_to_count, countries)
+    champion_count, countries = process_records(records)
+    display_results(champion_count, countries)
 
-def get_records():
+
+def process_records(records):
+    champion_count = {}
+    countries = set()
+    for record in records:
+        countries.add(record[COUNTRY])
+    try:
+        champion_count[record[CHAMPION]] += 1
+    except KeyError:
+        champion_count[record[CHAMPION]] = 1
+    return champion_count, countries
+
+
+def display_results(champion_to_count, countries):
     return
 
-def process_records():
+
+def get_records(filename):
     return
 
-def display_results():
-    return
 
 if __name__ == '__main__':
