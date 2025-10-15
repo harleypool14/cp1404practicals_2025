@@ -1,7 +1,7 @@
 """
 Emails
 Estimate: 25 minutes
-Actual:    minutes
+Actual:  32  minutes
 """
 
 
@@ -21,6 +21,9 @@ def main():
 
 
 def extract_name(email):
+    prefix = email.split('@')[0]
+    parts = prefix.split('.')
+    name = " ".join(parts).title()
     return name
 
 
