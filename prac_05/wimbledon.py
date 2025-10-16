@@ -10,12 +10,14 @@ CHAMPION = 2
 
 
 def main():
+    """Run the Wimbledon data program."""
     records = get_records(FILENAME)
     champion_count, countries = process_records(records)
     display_results(champion_count, countries)
 
 
 def process_records(records):
+    """Count champions and collect winning countries."""
     champion_count = {}
     countries = set()
     for record in records:
@@ -28,6 +30,7 @@ def process_records(records):
 
 
 def display_results(champion_to_count, countries):
+    """Displays champions and countries."""
     print("Wimbledon Champions:")
     for name, count in champion_to_count.items():
         print(name, count)
@@ -36,13 +39,14 @@ def display_results(champion_to_count, countries):
 
 
 def get_records(filename):
+    """Read records from the CSV file."""
     records = []
     with open(filename, "r", encoding="utf-8-sig") as in_file:
         in_file.readline()  # Remove header
-    for line in in_file:
-        parts = line.strip().split(",")
-    records.append(parts)
+        for line in in_file:
+            parts = line.strip().split(",")
+            records.append(parts)
     return records
 
 
-if __name__ == '__main__':
+main()

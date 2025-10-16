@@ -4,6 +4,7 @@ Estimate: 30 minutes
 Actual:  16  minutes
 """
 
+# Counts how many times each word appears in the given text."""
 word_count = {}
 text = input("Text: ")
 words = text.split()
