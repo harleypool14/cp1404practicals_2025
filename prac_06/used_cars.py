@@ -16,3 +16,11 @@ def main():
 
 
 main()
+
+"""Limo car"""
+limo = Car("Limo", 100)
+limo.add_fuel(20)
+print(f"Fuel: {limo.fuel}")
+distance_driven = limo.drive(115)
+print(f"The car drove {distance_driven}")
+print(limo)
