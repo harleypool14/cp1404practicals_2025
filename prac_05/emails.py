@@ -6,7 +6,7 @@ Actual:  32  minutes
 
 
 def main():
-    """Collects emails and names then displays them"""
+    """Collect emails and names then displays them"""
     email_to_name = {}
     email = input("Email: ")
     while email != "":
