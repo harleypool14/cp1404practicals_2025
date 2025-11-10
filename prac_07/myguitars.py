@@ -30,12 +30,22 @@ def main():
     display_guitars(guitars)
 
 
-def load_guitars():
-    return
+def load_guitars(filename):
+    guitars = []
+    try:
+        with open(filename, 'r') as file:
+            for line in file:
+                name, year, cost = line.strip().split(',')
+                guitars.append(Guitar(name, int(year), float(cost)))
+    except FileNotFoundError:
+        print(f"File {filename} not found. Starting with empty guitar list.")
+    return guitars
 
 
-def save_guitars():
-    return
+def save_guitars(guitars, filename):
+    with open(filename, 'w') as file:
+        for guitar in guitars:
+            file.write(f"{guitar.name},{guitar.year},{guitar.cost}\n")
 
 
 def get_new_guitar():
