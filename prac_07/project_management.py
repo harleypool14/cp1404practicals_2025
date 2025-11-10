@@ -38,7 +38,7 @@ def main():
         elif choice == "a":
             add_new_project(projects)
         elif choice == "u":
-            update_project()
+            update_project(projects)
         else:
             print("Invalid choice")
 
@@ -93,8 +93,25 @@ def filter_projects_by_date(projects):
 
 
 def add_new_project(projects):
-    return
+    print("Let's add a new project")
+    name = input("Name: ")
+    date_string = input("Start date (dd/mm/yy): ")
+    priority = int(input("Priority: "))
+    cost_estimate = float(input("Cost estimate: $"))
+    percent_complete = int(input("Percent complete: "))
 
 
-def update_project():
-    return
+def update_project(projects):
+    for i, project in enumerate(projects):
+        print(f"{i} {project}")
+
+    choice = int(input("Project choice: "))
+    project = projects[choice]
+    print(project)
+
+    new_percentage = input("New Percentage: ")
+    new_priority = input("New Priority: ")
+    project.update(new_percentage, new_priority)
+
+
+main()
