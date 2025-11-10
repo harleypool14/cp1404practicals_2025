@@ -49,11 +49,27 @@ def save_guitars(guitars, filename):
 
 
 def get_new_guitar():
-    return
+    print("Enter your new guitar details (or just press Enter to stop)")
+    name = input("Name: ")
+    if name == "":
+        return None
+    try:
+        year = int(input("Year: "))
+        cost = float(input("Cost: $"))
+        return Guitar(name, year, cost)
+    except ValueError:
+        print("Invalid input. Please enter valid numbers for year and cost.")
+        return None
 
 
-def display_guitars():
-    return
+def display_guitars(guitars):
+    if not guitars:
+        print("No guitars to display")
+        return
+    print("\nThese are my guitars:")
+    for i, guitar in enumerate(guitars, 1):
+        vintage_string = " (vintage)" if guitar.is_vintage() else ""
+        print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage_string}")
 
 
 if __name__ == '__main__':
