@@ -1,41 +1,36 @@
-"""
-CP1404 Week 11 Workshop - GUI program to convert miles to kilometres
-Lindsay Ward, IT@JCU
-06/10/2015
-"""
-
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 
-__author__ = 'Lindsay Ward'
-
-MILES_TO_KM = 1.60934
+MILES_TO_KM = 1.60934  # Conversion constant
 
 
 class MilesConverterApp(App):
-    output_text = StringProperty()
-    """ MilesConverterApp is a Kivy App for converting miles to kilometres """
+    """Converting miles to kilometers using Kivy app"""
+
+    output_km = StringProperty()
+
     def build(self):
-        """ build the Kivy app from the kv file """
-        self.title = "Convert Miles to Kilometres"
-        self.root = Builder.load_file('convert_m_km_solution.kv')
+        """Build the Kivy app from the kv file"""
+        self.title = "Convert Miles to Kilometers"
+        self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
-    def handle_calculate(self):
-        """ handle calculation (could be button press or other call), output result to label widget """
-        value = self.get_validated_miles()
-        result = value * MILES_TO_KM
-        self.root.ids.output_label.text = str(result)
+    def handle_calculate(self, text):
+        """Handle calculation"""
+        try:
+            miles = float(text)
+            self.output_km = str(miles * MILES_TO_KM)
+        except ValueError:
+            self.output_km = "0.0"
 
-    def handle_increment(self, change):
-        """
-        handle up/down button press, update the text input with new value, call calculation function
-        :param change: the amount to change
-        """
-        value = self.get_validated_miles() + change
-        self.root.ids.input_miles.text = str(value)
-        self.handle_calculate()
+    def handle_increment(self, text, change):
+        """Handle up and down button press"""
+        try:
+            result = float(text) + change
+        except ValueError:
+            result = change
+        self.root.ids.input_miles.text = str(result)
 
 
 MilesConverterApp().run()
