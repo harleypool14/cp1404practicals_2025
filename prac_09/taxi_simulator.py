@@ -3,6 +3,7 @@ from silver_service_taxi import SilverServiceTaxi
 
 MENU = "q)uit, c)hoose taxi, d)rive"
 
+
 def main():
     """Taxi simulator program using Taxi and SilverServiceTaxi classes"""
     taxis = [
@@ -42,3 +43,11 @@ def main():
         print(f"Bill to date: ${taxi_bill:.2f}")
         print(MENU)
         choice = input(">>> ").lower
+
+
+def display_taxis(taxis):
+    for i, taxi in enumerate(taxis):
+        print(f"{i}: {taxi}")
+
+
+main()
