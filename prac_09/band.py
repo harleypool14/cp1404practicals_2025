@@ -4,10 +4,11 @@ class Band:
         self.musicians = []
 
     def __str__(self):
-        pass
+        return f"{self.name} ({', '.join(str(m) for m in self.musicians)})"
 
     def add(self, musician):
-        pass
+        self.musicians.append(musician)
 
     def play(self):
-        pass
+        for musician in self.musicians:
+            print(musician.play())
